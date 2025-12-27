@@ -1,10 +1,9 @@
 {
-    "project_slug": "my_triton_kernel",
-    "kernel_name": "custom_kernel",
-    "kernel_description": "A custom Triton kernel",
-    "author": "Your Name",
-    "block_size": "1024",
-    "num_warps": "4",
-    "include_benchmark": "yes",
-    "include_pyproject": "no"
+  "project_slug": "my_triton_kernel",
+  "kernel_name": "custom_kernel",
+  "kernel_description": "A custom Triton kernel",
+  "author": "Param Pal Singh",
+  "block_size": "1024",
+  "include_benchmark": "no",
+  "include_pyproject": "no"
 }

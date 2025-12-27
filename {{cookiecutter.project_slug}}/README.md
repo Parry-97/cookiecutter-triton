@@ -25,6 +25,7 @@ uv run python {{ cookiecutter.kernel_name }}.py
 ```
 
 {% if cookiecutter.include_benchmark == "yes" -%}
+
 ## Benchmarking
 
 The benchmark will compare the Triton kernel against PyTorch implementation:
@@ -39,7 +40,6 @@ Results will be saved to a PNG file in the current directory.
 ## Kernel Parameters
 
 - **BLOCK_SIZE**: {{ cookiecutter.block_size }} (elements per program)
-- **num_warps**: {{ cookiecutter.num_warps }}
 
 ## Author
 

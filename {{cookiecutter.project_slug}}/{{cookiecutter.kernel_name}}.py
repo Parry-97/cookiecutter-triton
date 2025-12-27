@@ -72,7 +72,7 @@ def {{ cookiecutter.kernel_name }}(x: torch.Tensor) -> torch.Tensor:
     n_elements = x.numel()
 
     # Define block size
-    BLOCK_SIZE = {{ cookiecutter.block_size }}
+    BLOCK_SIZE = tl.constexpr({{ cookiecutter.block_size }})
 
     # Calculate grid size (number of programs to launch)
     grid = (triton.cdiv(n_elements, BLOCK_SIZE),)
@@ -82,8 +82,7 @@ def {{ cookiecutter.kernel_name }}(x: torch.Tensor) -> torch.Tensor:
         x,
         output,
         n_elements,
-        BLOCK_SIZE=BLOCK_SIZE,
-        num_warps={{ cookiecutter.num_warps }},
+        BLOCK_SIZE=BLOCK_SIZE
     )
 
     return output
